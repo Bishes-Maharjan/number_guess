@@ -13,7 +13,7 @@ chmod +x number_guess.sh #EXECUTABLE PERMISSION FOR THE .SH FILE
 ### IF YOU WANNA CONTINUE FROM THE ALREADY EXISTING DB, run:
 
 ```bash
-psql -U postgres < number_guess.sql
+psql -U postgres < number_guess.sql #ASSUMING YOUR USERNAME IS postgres
 ```
 
 ### IF YOU WANNA CREATE THE DB BY YOURSELF
