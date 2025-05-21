@@ -2,7 +2,7 @@
 
 DB_USERNAME="postgres"
 DB_NAME="number_guess"
-PSQL="psql --username='$DB_USERNAME' --dbname='$DB_NAME' -t --no-align -c"
+PSQL="psql --username=$DB_USERNAME --dbname=$DB_NAME -t --no-align -c"
 
 generate_random_number() {
   echo $(( ( RANDOM % 1000 ) + 1 ))
@@ -53,6 +53,7 @@ GAME() {
 
     UPDATE=$($PSQL "UPDATE userdata SET games_played=$GAMES_PLAYED, best_game=$BEST_GAME WHERE username='$USERNAME'")
   fi
+  return;
 }
 
 MAIN_MENU() {
@@ -70,5 +71,6 @@ else
   fi
 
 GAME $GAMES_PLAYED $USERNAME $BEST_GAME
+
 }
 MAIN_MENU
