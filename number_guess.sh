@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PSQL="psql --username=postgres --dbname=number_guess -t --no-align -c"
+DB_USERNAME="postgres"
+DB_NAME="number_guess"
+PSQL="psql --username='$DB_USERNAME' --dbname='$DB_NAME' -t --no-align -c"
 
 generate_random_number() {
   echo $(( ( RANDOM % 1000 ) + 1 ))
